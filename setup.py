@@ -8,7 +8,7 @@ with open('CHANGELOG.md', 'r') as f:
 
 setuptools.setup(
     name="xcsr",
-    version="1.0.0",
+    version="1.0.0a4",
     author="xKyFal",
     description="A simple comic scraper.",
     long_description="{}\n\n{}".format(long_description, changelog),
@@ -23,13 +23,13 @@ setuptools.setup(
         'Intended Audience :: End Users/Desktop',
         "Operating System :: OS Independent",
     ],
-    package_dir={"": "src"},
+    package_dir={"": "src/xcsr"},
     keywords='command-line, cli, comics, scraper',
-    packages=setuptools.find_namespace_packages(include=('src.xcsr')),
+    packages=setuptools.find_namespace_packages(include=('xcsr')),
     python_requires=">=3.6",
     
     entry_points="""
     [console_scripts]
-    xcsr=xcsr.xcsr:main
+    xcsr=xcsr:main
     """,
 )
