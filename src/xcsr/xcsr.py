@@ -8,7 +8,7 @@ BASE_SEARCH_URL=f'https://getcomics.info/page/#/?s='
 def main():
     print('\x1b[1;33m• Welcome to xcsr, the comic scraper.\n')
     
-    query = input('\x1b[1;33m· Enter your query: ').replace(' ', '+')
+    query = input('\x1b[1;33m· Query: ').replace(' ', '+')
     page = int(input('\x1b[1;33m· Page: '))
     
     response = requests.get(BASE_SEARCH_URL.replace('#', str(page)) + query)
@@ -39,7 +39,7 @@ def main():
                 for chunk in r.iter_content(chunk_size=128):
                     fd.write(chunk)
             
-            print(f'\n\x1b[1;33m· Finished downloading "{fname}!')
+            print(f'\n\x1b[1;33m· Finished downloading "{fname}"!')
                 
         except KeyError:
             print("\x1b[1;31m· Couldn't retrieve download url.")    
